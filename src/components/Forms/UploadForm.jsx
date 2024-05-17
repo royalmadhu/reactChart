@@ -96,6 +96,7 @@ function UploadForm({ onDataUpload }) {
     </div>
 
     <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded">Upload Data</button>
+    <div className='p-16'></div>
   </form>
   );
 }

@@ -2,8 +2,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+.content {
+  display: flex;
+}
 .sidebar {
     width: 20%;
     background-color: #77C3EC;
-    height: 100vh;
+    height: 100%;
   }

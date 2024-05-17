@@ -17,8 +17,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Sidebar />
         <div className="content">
+          <Sidebar />
           <Routes>
             <Route
               path="/"

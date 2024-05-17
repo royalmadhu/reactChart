@@ -3,11 +3,23 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 
 function Results({ data }) {
   // console.log("final", data);
+    const minRPM = Math.min(...data.map(item => item.RPM));
+    const startingPoint = minRPM - (minRPM * 0.05);
+
+
+    const maxRPM = Math.max(...data.map(item => item.RPM));
+    const endingPoint = maxRPM + (maxRPM * 0.05);
+
+
+    const modifiedData = data.map(item => ({
+      ...item,
+      RPM: item.RPM - startingPoint, 
+}));
 
   return (
     <div className='mt-32'>
       <h2 className='ml-8 mb-4 text-2xl font-bold'>Time Vs RPM</h2>
-      <LineChart width={800} height={400} data={data}>
+      <LineChart width={800} height={400} data={modifiedData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="time" />
         <YAxis />

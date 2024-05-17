@@ -10,7 +10,7 @@ function Sidebar() {
           <Link to="/">Dashboard</Link> 
         </li>
         <li>
-          <Link to="/dataSummary">Data Summary</Link> 
+          {/* <Link to="/dataSummary">Data Summary</Link>  */}
         </li>
         <li className="mt-2">
           <Link to="/results">Results</Link>
