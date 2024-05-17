@@ -3,6 +3,7 @@ import * as XLSX from "xlsx";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader';
+import imageCover from '../../img/ImageCover.jpeg';
 
 function UploadForm({ onDataUpload }) {
   const [machine, setMachine] = useState('');
@@ -63,8 +64,9 @@ function UploadForm({ onDataUpload }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-16">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mt-16">
     { (loading) && <Loader />}
+    <img src={imageCover} className="w-full  my-2" alt="Description of image 1" />
     <h1 className="text-2xl font-bold mb-4">Predictive Maintenance Data Upload</h1>
 
     <div className="mb-4">

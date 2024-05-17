@@ -3,18 +3,22 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 
 function Results({ data }) {
   // console.log("final", data);
-    const minRPM = Math.min(...data.map(item => item.RPM));
+  let modifiedData = []; 
+   if(data && data.length > 0){
+    const minRPM = Math.min(...data?.map(item => item?.RPM));
     const startingPoint = minRPM - (minRPM * 0.05);
 
 
-    const maxRPM = Math.max(...data.map(item => item.RPM));
+    const maxRPM = Math.max(...data?.map(item => item?.RPM));
     const endingPoint = maxRPM + (maxRPM * 0.05);
 
 
-    const modifiedData = data.map(item => ({
+     modifiedData = data?.map(item => ({
       ...item,
-      RPM: item.RPM - startingPoint, 
-}));
+      RPM: item?.RPM - startingPoint, 
+   }));
+   }
+    
 
   return (
     <div className='mt-32'>

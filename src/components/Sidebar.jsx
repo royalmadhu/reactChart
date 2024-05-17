@@ -9,11 +9,11 @@ function Sidebar() {
         <li className="mb-2 font-normal">
           <Link to="/">Dashboard</Link> 
         </li>
-        <li>
-          {/* <Link to="/dataSummary">Data Summary</Link>  */}
-        </li>
         <li className="mt-2">
           <Link to="/results">Results</Link>
+        </li>
+        <li className="mt-2">
+          <Link to="/dataSummary">Data Summary</Link> 
         </li>
       </ul>
     </div>
