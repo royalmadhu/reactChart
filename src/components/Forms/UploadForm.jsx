@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as XLSX from "xlsx";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
@@ -11,9 +11,9 @@ function UploadForm({ onDataUpload }) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [data, setData] = useState([]);
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
- 
+
 
   const handleMachineChange = (event) => {
     setMachine(event.target.value);
@@ -34,11 +34,11 @@ function UploadForm({ onDataUpload }) {
   }
   useEffect(() => {
     if (data.length > 0) {
-      setTimeout(()=>{setLoading(false);},8000)
+      setTimeout(() => { setLoading(false); }, 8000)
       onDataUpload(data)
     }
   }, [data]);
- 
+
 
   const handleStartDateChange = (event) => {
     setStartDate(event.target.value);
@@ -64,42 +64,46 @@ function UploadForm({ onDataUpload }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mt-16">
-    { (loading) && <Loader />}
-    <img src={imageCover} className="w-full  my-2" alt="Description of image 1" />
-    <h1 className="text-2xl font-bold mb-4">Predictive Maintenance Data Upload</h1>
+    <div>
+      <img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%' }} />
+      <div className="container mx-auto w-1/2">
+        <form onSubmit={handleSubmit} className="mx-auto">
+          {loading && <Loader />}
+          <h1 className="text-2xl font-bold mb-4 text-center mt-4">Predictive Maintenance Data Upload</h1>
 
-    <div className="mb-4">
-      <label htmlFor="machine" className="block font-semibold mb-2 text-left">Select Machine:</label>
-      <select id="machine" value={machine} onChange={handleMachineChange} className="w-full border border-gray-300 rounded px-3 py-2">
-        <option value="">Select...</option>
-        <option value="machine1">Machine 1</option>
-        <option value="machine2">Machine 2</option>
-      </select>
+          <div className="mb-4">
+            <label htmlFor="machine" className="block font-semibold mb-2 text-left">Select Machine:</label>
+            <select id="machine" value={machine} onChange={handleMachineChange} className="w-full border border-gray-300 rounded px-3 py-2">
+              <option value="">Select...</option>
+              <option value="machine1">Machine 1</option>
+              <option value="machine2">Machine 2</option>
+            </select>
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="file" className="block font-semibold mb-2 text-left">Upload Data File:</label>
+            <input
+              type="file"
+              accept=".xlsx, .xls"
+              onChange={handleFileUpload}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="startDate" className="block font-semibold mb-2 text-left">Start Date:</label>
+            <input id="startDate" type="date" value={startDate} onChange={handleStartDateChange} className="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="endDate" className="block font-semibold mb-2 text-left">End Date:</label>
+            <input id="endDate" type="date" value={endDate} onChange={handleEndDateChange} className="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+
+          <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded">Upload Data</button>
+          <div className='p-16'></div>
+        </form>
+      </div>
     </div>
-
-    <div className="mb-4">
-      <label htmlFor="file" className="block font-semibold mb-2 text-left">Upload Data File:</label>
-      <input 
-        type="file" 
-        accept=".xlsx, .xls" 
-        onChange={handleFileUpload} 
-      />
-    </div>
-
-    <div className="mb-4">
-      <label htmlFor="startDate" className="block font-semibold mb-2 text-left">Start Date:</label>
-      <input id="startDate" type="date" value={startDate} onChange={handleStartDateChange} className="w-full border border-gray-300 rounded px-3 py-2" />
-    </div>
-
-    <div className="mb-4">
-      <label htmlFor="endDate" className="block font-semibold mb-2 text-left">End Date:</label>
-      <input id="endDate" type="date" value={endDate} onChange={handleEndDateChange} className="w-full border border-gray-300 rounded px-3 py-2" />
-    </div>
-
-    <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded">Upload Data</button>
-    <div className='p-16'></div>
-  </form>
   );
 }
 

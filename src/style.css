@@ -5,11 +5,7 @@
 .content {
   display: flex;
 }
-.sidebar {
-    width: 20%;
-    background-color: #77C3EC;
-    height: 100%;
-  }
+
   .loader-overlay {
     position: fixed;
     top: 0;

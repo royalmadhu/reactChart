@@ -6,6 +6,8 @@ import DataSummary from "./components/DataSummary";
 import Results from "./components/Results";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Copyright from "./components/Copyright";
 
 function App() {
   const [resultData, setResultData] = useState(null);
@@ -16,9 +18,9 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <div className="App">
         <div className="content">
-          <Sidebar />
           <Routes>
             <Route
               path="/"
@@ -29,6 +31,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      <Copyright />
     </Router>
   );
 }

@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  // State to keep track of the selected item
+ 
   const [selectedItem, setSelectedItem] = useState(null);
-
-  // Function to handle click on an item
   const handleItemClick = (index) => {
     setSelectedItem(index);
   };
