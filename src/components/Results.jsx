@@ -21,7 +21,7 @@ function Results({ data }) {
     
 
   return (
-    <div className="container mx-auto px-40">
+    <div className="container mx-auto w-1/2">
       <div className='mt-32'>
         <h2 className='ml-8 mb-4 text-2xl font-bold'>Time Vs RPM</h2>
         <LineChart width={800} height={400} data={modifiedData}>
@@ -69,6 +69,7 @@ function Results({ data }) {
           <Line type="monotone" dataKey="Mud Pressure (MPa)" stroke="#8884d8" />
         </LineChart>
       </div>
+      <div className='pb-16'></div>
     </div>
   );
 }

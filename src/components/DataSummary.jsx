@@ -15,7 +15,6 @@ function DataSummary() {
           <img src={image3} className="w-full  my-2" alt="Description of image 3" />
           <img src={image4} className="w-full my-2 last-image" alt="Description of image 4" />
         </div>
-        <div className='p-16'></div> 
       </div>
      </div> 
   )
