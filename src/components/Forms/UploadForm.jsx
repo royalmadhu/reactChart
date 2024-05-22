@@ -99,7 +99,7 @@ function UploadForm({ onDataUpload }) {
             <input id="endDate" type="date" value={endDate} onChange={handleEndDateChange} className="w-full border border-gray-300 rounded px-3 py-2" />
           </div>
 
-          <button type="submit" className="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded">Upload Data</button>
+          <button type="submit" className="w-full bg-slate-600 text-white font-semibold py-2 px-4 rounded">Upload Data</button>
           <div className='p-16'></div>
         </form>
       </div>

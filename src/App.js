@@ -8,6 +8,7 @@ import Sidebar from "./components/Sidebar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Copyright from "./components/Copyright";
+import Home from "./components/Home";
 
 function App() {
   const [resultData, setResultData] = useState(null);
@@ -22,10 +23,7 @@ function App() {
       <div className="App">
         <div className="content">
           <Routes>
-            <Route
-              path="/"
-              element={<UploadForm onDataUpload={handleDataUpload} />}
-            />
+            <Route path="/" element={<Home />} />
             <Route path="/dataSummary" element={<DataSummary />} />
             <Route path="/results" element={<Results data={resultData} />} />
           </Routes>
