@@ -15,13 +15,10 @@ function Home() {
       <div className="mt-8">
         <a href="/uploadForm" className="inline-block bg-indigo-500 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-600">Get Started</a></div>
     </div>
-    <img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%' }} />
+    <img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%',height: '100vh' }} />
     
   </div>
-  
-    <div className="container mx-auto w-1/2">
 
-    </div>
     <section className="bg-white py-20">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-gray-900 text-center">

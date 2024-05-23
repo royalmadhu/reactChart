@@ -21,7 +21,11 @@ function Header() {
   return (
     <header className={`shadow fixed z-20 w-full h-30 transition-colors duration-300 ${scrolled ? 'bg-slate-700' : 'bg-transparent'}`}>
       <div className="mx-auto py-2 px-4 sm:px-6 lg:px-16 flex justify-between">
-      <div className="py-6"><img src={rclogo}/></div>
+      <div className="py-6">
+        <Link to="/" className={`${scrolled ? 'text-white' : 'text-black font-bold'}`}>
+            <img src={rclogo}/>
+        </Link>
+        </div>
       <div className="py-6">
           <Link to="/" className={`${scrolled ? 'text-white' : 'text-black font-bold'}`}>Home</Link>
       </div>
