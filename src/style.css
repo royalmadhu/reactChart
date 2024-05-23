@@ -25,4 +25,16 @@
   .last-image{
     height: 400px;
   }
+  .skeleton-container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skeleton {
+    width: 80vw; 
+    padding: 16rem; 
+    text-align: center; 
+  }
   

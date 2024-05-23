@@ -1,8 +1,22 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
+
+function Skeleton() {
+  return (
+    <div className="skeleton-container">
+      <div className="skeleton mt-20 ml-8">
+        <h2>No data available...</h2>
+      </div>
+    </div>
+  );
+}
+
 function Results({ data }) {
   // console.log("final", data);
+  if (!data || data.length === 0) {
+    return <Skeleton />;
+  }
   let modifiedData = []; 
    if(data && data.length > 0){
     const minRPM = Math.min(...data?.map(item => item?.RPM));
