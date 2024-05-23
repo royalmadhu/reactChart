@@ -23,14 +23,14 @@ function Header() {
       <div className="mx-auto py-2 px-4 sm:px-6 lg:px-16 flex justify-between">
       <div className="py-6"><img src={rclogo}/></div>
         <div className="py-6">
-          <Link to="/" className="text-white">Home</Link>
-        </div>
-		<div className="py-6">
-		 <Link to="/dataSummary" className="text-white">Data Summary</Link>
-		 </div> 
-		<div className="py-6"> 
-		 <Link to="/results" className="text-white">Results</Link>
-		 </div> 
+          <Link to="/" className={`${scrolled ? 'text-white' : 'text-black font-bold'}`}>Home</Link>
+      </div>
+      <div className="py-6">
+      <Link to="/dataSummary" className={`${scrolled ? 'text-white' : 'text-black font-bold'}`}>Data Summary</Link>
+      </div> 
+      <div className="py-6"> 
+      <Link to="/results" className={`${scrolled ? 'text-white' : 'text-black font-bold'}`}>Results</Link>
+      </div> 
       </div>
     </header>
   )

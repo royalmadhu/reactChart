@@ -24,8 +24,15 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/dataSummary" element={<DataSummary />} />
-            <Route path="/results" element={<Results data={resultData} />} />
+            <Route
+              path="/dataSummary"
+              element={<Results data={resultData} />}
+            />
+            <Route
+              path="/uploadForm"
+              element={<UploadForm onDataUpload={handleDataUpload} />}
+            />
+            <Route path="/results" element={<DataSummary />} />
           </Routes>
         </div>
       </div>
