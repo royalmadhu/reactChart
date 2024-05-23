@@ -13,7 +13,7 @@ function Home() {
         Discover the power of AI-driven maintenance predictions for your vessel.
       </p>
       <div className="mt-8">
-        <a href="/uploadForm" className="inline-block bg-indigo-500 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-600">Get Started</a></div>
+        <a href="/uploadForm" className="inline-block bg-sky-900 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-sky-950">Get Started</a></div>
     </div>
     <img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%',height: '100vh' }} />
     
@@ -25,7 +25,7 @@ function Home() {
                 Why Choose Our Vessel Maintenance Predictor?</h2>
                 <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8"><div class="flex flex-col text-center items-center">
                     <div class="flex-shrink-0">
-                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-900 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2">
                                 <path fill-rule="evenodd" d="M9.808 4.057a.75.75 0 0 1 .92-.527l3.116.849a.75.75 0 0 1 .528.915l-.823 3.121a.75.75 0 0 1-1.45-.382l.337-1.281a23.484 23.484 0 0 0-3.609 3.056.75.75 0 0 1-1.07.01L6 8.06l-3.72 3.72a.75.75 0 1 1-1.06-1.061l4.25-4.25a.75.75 0 0 1 1.06 0l1.756 1.755a25.015 25.015 0 0 1 3.508-2.85l-1.46-.398a.75.75 0 0 1-.526-.92Z" clip-rule="evenodd"></path></svg></div></div><div class="mt-6">
                                     <h3 className="text-lg font-medium text-gray-900">Efficiency</h3>
@@ -36,8 +36,8 @@ function Home() {
                                         </div>
                                         <div className="flex flex-col text-center items-center">
                                             <div className="flex-shrink-0">
-                                                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2"><path fill-rule="evenodd" d="M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z" clip-rule="evenodd"></path></svg></div></div><div class="mt-6"><h3 class="text-lg font-medium text-gray-900">Quicker</h3><p class="mt-2 text-base text-gray-500">AI-driven insights enable swift decision-making, ensuring rapid response to maintenance requirements.</p></div></div><div class="flex flex-col text-center items-center"><div class="flex-shrink-0"><div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2"><path fill-rule="evenodd" d="M8.5 1.709a.75.75 0 0 0-1 0 8.963 8.963 0 0 1-4.84 2.217.75.75 0 0 0-.654.72 10.499 10.499 0 0 0 5.647 9.672.75.75 0 0 0 .694-.001 10.499 10.499 0 0 0 5.647-9.672.75.75 0 0 0-.654-.719A8.963 8.963 0 0 1 8.5 1.71Zm2.34 5.504a.75.75 0 0 0-1.18-.926L7.394 9.17l-1.156-.99a.75.75 0 1 0-.976 1.138l1.75 1.5a.75.75 0 0 0 1.078-.106l2.75-3.5Z" clip-rule="evenodd"></path></svg></div></div><div className="mt-6">
+                                                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-sky-900 text-white">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2"><path fill-rule="evenodd" d="M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z" clip-rule="evenodd"></path></svg></div></div><div class="mt-6"><h3 class="text-lg font-medium text-gray-900">Quicker</h3><p class="mt-2 text-base text-gray-500">AI-driven insights enable swift decision-making, ensuring rapid response to maintenance requirements.</p></div></div><div class="flex flex-col text-center items-center"><div class="flex-shrink-0"><div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-900 text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2"><path fill-rule="evenodd" d="M8.5 1.709a.75.75 0 0 0-1 0 8.963 8.963 0 0 1-4.84 2.217.75.75 0 0 0-.654.72 10.499 10.499 0 0 0 5.647 9.672.75.75 0 0 0 .694-.001 10.499 10.499 0 0 0 5.647-9.672.75.75 0 0 0-.654-.719A8.963 8.963 0 0 1 8.5 1.71Zm2.34 5.504a.75.75 0 0 0-1.18-.926L7.394 9.17l-1.156-.99a.75.75 0 1 0-.976 1.138l1.75 1.5a.75.75 0 0 0 1.078-.106l2.75-3.5Z" clip-rule="evenodd"></path></svg></div></div><div className="mt-6">
                                                         <h3 className="text-lg font-medium text-gray-900">Reliability</h3>
                                                         <p className="mt-2 text-base text-gray-500">
                                                             Trust in our AI-powered maintenance predictions for reliable vessel operations and enhanced safety.</p>
