@@ -3,7 +3,22 @@ import imageCover from '../img/ImageCover.jpeg';
 
 function Home() {
   return (
-    <div><img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%' }} />
+    <div>
+    <div className="relative">
+    <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
+      <h1 className="text-3xl sm:text-4xl font-extrabold">
+        Welcome to our Vessel Maintenance Predictor
+      </h1>
+      <p className="mt-4 text-lg sm:text-xl text-gray-300">
+        Discover the power of AI-driven maintenance predictions for your vessel.
+      </p>
+      <div className="mt-8">
+        <a href="/uploadForm" className="inline-block bg-indigo-500 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-600">Get Started</a></div>
+    </div>
+    <img src={imageCover} className="w-full mb-2" alt="Description of image 1" style={{ width: '100%' }} />
+    
+  </div>
+  
     <div className="container mx-auto w-1/2">
 
     </div>
