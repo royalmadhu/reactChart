@@ -1,5 +1,7 @@
 import React from "react";
 import imageCover from "../img/ImageCover.jpeg";
+import imgsecond from "../img/second3.jpg";
+import imgthird from "../img/third3.jpg";
 
 function Home() {
   return (
@@ -7,11 +9,10 @@ function Home() {
       <div className="relative">
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
           <h1 className="text-3xl sm:text-4xl font-extrabold">
-            Welcome to our Vessel Maintenance Predictor
+            Intelligent Preventive Maintenance Solution
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-gray-300">
-            Discover the power of AI-driven maintenance predictions for your
-            vessel.
+            Discover the power of AI driven Failure Prediction and Maintenance Scheduling tool for all your assets
           </p>
           
         </div>
@@ -26,7 +27,8 @@ function Home() {
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-3xl font-extrabold text-gray-900 text-center">
-            Why Choose Our Vessel Maintenance Predictor?
+            Why Choose Our Preventive Maintenance Solution?
+
           </h2>
           <div class="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
             <div class="flex flex-col text-center items-center">
@@ -50,11 +52,11 @@ function Home() {
               </div>
               <div class="mt-6">
                 <h3 className="text-lg font-medium text-gray-900">
-                  Efficiency
+                  Reduces downtime
                 </h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Predict maintenance needs accurately, enhancing operational
-                  efficiency and minimizing downtime.
+                  Accurately predicts asset failure basis IoT sensor data readings. Helps eliminate down time and loss of sales
+
                 </p>
               </div>
             </div>
@@ -106,11 +108,10 @@ function Home() {
               </div>
               <div className="mt-6">
                 <h3 className="text-lg font-medium text-gray-900">
-                  Reliability
+                  Saving
                 </h3>
                 <p className="mt-2 text-base text-gray-500">
-                  Trust in our AI-powered maintenance predictions for reliable
-                  vessel operations and enhanced safety.
+                  Save cost by avoiding unnecessary breakdowns and losses
                 </p>
               </div>
             </div>
@@ -119,11 +120,11 @@ function Home() {
       </section>
       <section id="cardGridStack" className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="title-container col-12 mb-16">
+          {/* <div className="title-container col-12 mb-16">
             <h2 className="text-3xl font-extrabold text-gray-900 text-center">
               Our Vessel Maintenance Services
             </h2>
-          </div>
+          </div> */}
           <div className="card-grid-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="wp-block-aero-cards col-span-1">
               <a
@@ -134,18 +135,18 @@ function Home() {
               >
                 <div className="card-image-block h-72">
                   <img
-                    className="img-fluid h-full object-cover"
-                    src="https://wayl.eu/media/things-to-know-maintenance.jpg"
+                    class="img-fluid h-full object-cover"
+                    src="https://wayl.eu/media/maintenance-wayl-1.jpg"
                     alt="GE Aerospace Image"
                   />
                 </div>
                 <div className="card-body mt-4">
-                  <h4 className="card-title heading-200 mb-2 font-bold">
-                    Planned Maintenance
+                  <h4 className="card-title heading-200 mb-2 font-bold text-center">
+                    Remaining Useful Life :
                   </h4>
                   <p class="card-sub-text body-2">
-                    Helping you maximize asset value with greater operational
-                    assurance.
+                    Predict when an asset requires change or maintenance based on anomalous senor data
+
                   </p>
                 </div>
               </a>
@@ -160,17 +161,18 @@ function Home() {
                 <div class="card-image-block h-72">
                   <img
                     class="img-fluid h-full object-cover"
-                    src="https://wayl.eu/media/maintenance-wayl-1.jpg"
+                    src={imgsecond}
                     alt="GE Aerospace Image"
                   />
                 </div>
                 <div class="card-body mt-4">
-                  <h4 class="card-title heading-200 mb-2 font-bold">
-                    Modularized ship management
+                  <h4 class="card-title heading-200 mb-2 font-bold text-center">
+                    Asset Failure Prediction:
+
                   </h4>
                   <p class="card-sub-text body-2">
-                    Flexible value-added repairs when you need it, where you
-                    need it.
+                    Predict when an asset will fail based on past Iot sensor readings and failure occurrences
+
                   </p>
                 </div>
               </a>
@@ -185,17 +187,18 @@ function Home() {
                 <div className="card-image-block h-72">
                   <img
                     class="img-fluid h-full object-cover"
-                    src="https://t4.ftcdn.net/jpg/03/88/66/25/360_F_388662510_v4BK8jPXstLx5CD140sob43Y1qxWUZ3G.jpg"
+                    src={imgthird}
                     alt="GE Aerospace Image"
                   />
                 </div>
                 <div class="card-body mt-4">
-                  <h4 class="card-title heading-200 mb-2 font-bold">
-                    Corrective / Breakdown Maintenance
+                  <h4 class="card-title heading-200 mb-2 font-bold text-center">
+                    Asset Maintenance Planning:
+
                   </h4>
                   <p class="card-sub-text body-2">
-                    Ensure retention of the highest level of performance and
-                    residual value.
+                    Schedule Future Maintenance of assets predicted basis service record and probability of failure
+
                   </p>
                 </div>
               </a>
