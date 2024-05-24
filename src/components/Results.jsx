@@ -51,7 +51,34 @@ function Results({ data }) {
       'Torque (Nm)': item['Torque (Nm)'] - startingTorque,
     }));
   }
+let mudflowData = [];
+  if (data && data.length > 0) {
+    const minTorque = Math.min(...data?.map((item) => item['Mudflow (L/min)']));
 
+    const startingTorque = minTorque - minTorque * 0.001;
+
+    const maxTorque = Math.max(...data?.map((item) => item['Mudflow (L/min)']));
+    const endingTorque = maxTorque;
+
+    mudflowData = data?.map((item) => ({
+      ...item,
+      'Mudflow (L/min)': item['Mudflow (L/min)']- startingTorque,
+    }));
+  }
+let mudPressure = [];
+  if (data && data.length > 0) {
+    const minTorque = Math.min(...data?.map((item) => item['Mud Pressure (MPa)']));
+
+    const startingTorque = minTorque - minTorque * 0.001;
+
+    const maxTorque = Math.max(...data?.map((item) => item['Mud Pressure (MPa)']));
+    const endingTorque = maxTorque;
+
+    mudPressure = data?.map((item) => ({
+      ...item,
+      'Mud Pressure (MPa)': item['Mud Pressure (MPa)']- startingTorque,
+    }));
+  }
 
 
   return (
@@ -87,7 +114,7 @@ function Results({ data }) {
         <h2 className="ml-8 mb-4 text-2xl font-bold">
           Time Vs Mudflow (L/min)
         </h2>
-        <LineChart width={800} height={400} data={data}>
+        <LineChart width={800} height={400} data={mudflowData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" />
           <YAxis />
@@ -98,7 +125,7 @@ function Results({ data }) {
         <h2 className="ml-8 mb-4 text-2xl font-bold">
           Time Vs Mud Pressure (MPa)
         </h2>
-        <LineChart width={800} height={400} data={data}>
+        <LineChart width={800} height={400} data={mudPressure}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" />
           <YAxis />
