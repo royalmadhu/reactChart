@@ -7,11 +7,11 @@ function Home() {
   return (
     <div>
       <div className="relative">
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-white">
-          <h1 className="text-3xl sm:text-4xl font-extrabold">
+        <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-black">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-black">
             Intelligent Preventive Maintenance Solution
           </h1>
-          <p className="mt-4 text-lg sm:text-xl text-gray-300">
+          <p className="mt-4 text-lg sm:text-xl text-black">
             Discover the power of AI driven Failure Prediction and Maintenance Scheduling tool for all your assets
           </p>
           
@@ -20,7 +20,7 @@ function Home() {
           src={imageCover}
           className="w-full mb-2"
           alt="Description of image 1"
-          style={{ width: "100%", height: "100vh" }}
+          style={{ width: "100%", height: "100vh",opacity: 0.5 }}
         />
       </div>
 
