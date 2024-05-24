@@ -148,7 +148,7 @@ function Home() {
                   <h4 className="card-title heading-200 mb-2 font-bold text-center">
                     Remaining Useful Life 
                   </h4>
-                  <p class="card-sub-text body-2">
+                  <p class="card-sub-text body-2 text-center">
                     Predict when an asset requires change or maintenance based on anomalous senor data
 
                   </p>
@@ -174,7 +174,7 @@ function Home() {
                     Asset Failure Prediction
 
                   </h4>
-                  <p class="card-sub-text body-2">
+                  <p class="card-sub-text body-2 text-center">
                     Predict when an asset will fail based on past Iot sensor readings and failure occurrences
 
                   </p>
@@ -200,7 +200,7 @@ function Home() {
                     Asset Maintenance Planning
 
                   </h4>
-                  <p class="card-sub-text body-2">
+                  <p class="card-sub-text body-2 text-center">
                     Schedule Future Maintenance of assets predicted basis service record and probability of failure
 
                   </p>
