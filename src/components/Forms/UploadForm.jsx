@@ -50,7 +50,7 @@ function UploadForm({ onDataUpload }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate('/results');
+    navigate('/dataSummary');
     try {
       const formData = new FormData();
       formData.append('machine', machine);

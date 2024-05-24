@@ -13,14 +13,7 @@ function Home() {
             Discover the power of AI-driven maintenance predictions for your
             vessel.
           </p>
-          <div className="mt-8">
-            <a
-              href="/uploadForm"
-              className="inline-block bg-sky-900 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-sky-950"
-            >
-              Get Started
-            </a>
-          </div>
+          
         </div>
         <img
           src={imageCover}
@@ -210,6 +203,14 @@ function Home() {
           </div>
         </div>
       </section>
+         <div className="mt-4 mb-4 flex justify-center items-center">
+            <a
+              href="/uploadForm"
+              className=" bg-sky-900 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-sky-950"
+            >
+              Get Started
+            </a>
+          </div>
     </div>
   );
 }
