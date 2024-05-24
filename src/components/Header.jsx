@@ -33,9 +33,9 @@ function Header() {
           </Link>
         </div>
         <div className="hidden lg:flex">
-          <Link to="/" className={`${scrolled ? 'text-white' : 'text-black font-bold'} ml-6`}>Home</Link>
-          <Link to="/dataSummary" className={`${scrolled ? 'text-white' : 'text-black font-bold'} ml-6`}>Data Summary</Link>
-          <Link to="/results" className={`${scrolled ? 'text-white' : 'text-black font-bold'} ml-6`}>Results</Link>
+          <Link to="/" className={`${scrolled ? 'text-white' : 'text-black font-bold '} ml-6 text-xl`}>Home</Link>
+          <Link to="/dataSummary" className={`${scrolled ? 'text-white' : 'text-black font-bold'} ml-6 text-xl`}>Data Summary</Link>
+          <Link to="/results" className={`${scrolled ? 'text-white' : 'text-black font-bold'} ml-6 text-xl`}>Results</Link>
         </div>
         <div className="lg:hidden">
           <button className="text-black focus:outline-none" onClick={toggleMenu}>

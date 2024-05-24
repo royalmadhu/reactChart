@@ -34,7 +34,7 @@ function UploadForm({ onDataUpload }) {
   }
   useEffect(() => {
     if (data.length > 0) {
-      setTimeout(() => { setLoading(false); }, 8000)
+      setTimeout(() => { setLoading(false); }, 2000)
       onDataUpload(data)
     }
   }, [data]);

@@ -20,7 +20,7 @@ function Skeleton() {
 }
 
 function Results({ data }) {
-  // console.log("final", data);
+  console.log("final", data);
   if (!data || data.length === 0) {
     return <Skeleton />;
   }
@@ -37,6 +37,22 @@ function Results({ data }) {
       RPM: item?.RPM - startingPoint,
     }));
   }
+ let modifiedTorque = [];
+  if (data && data.length > 0) {
+    const minTorque = Math.min(...data?.map((item) => item['Torque (Nm)']));
+
+    const startingTorque = minTorque - minTorque * 0.001;
+
+    const maxTorque = Math.max(...data?.map((item) => item['Torque (Nm)']));
+    const endingTorque = maxTorque;
+
+    modifiedTorque = data?.map((item) => ({
+      ...item,
+      'Torque (Nm)': item['Torque (Nm)'] - startingTorque,
+    }));
+  }
+
+
 
   return (
     <div className="container mx-auto w-1/2">
@@ -51,7 +67,7 @@ function Results({ data }) {
           <Line type="monotone" dataKey="RPM" stroke="#8884d8" />
         </LineChart>
         <h2 className="ml-8 mb-4 text-2xl font-bold">Time Vs Torque (Nm)</h2>
-        <LineChart width={800} height={400} data={data}>
+        <LineChart width={800} height={400} data={modifiedTorque}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" />
           <YAxis />
