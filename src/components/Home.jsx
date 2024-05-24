@@ -2,6 +2,8 @@ import React from "react";
 import imageCover from "../img/ImageCover.jpeg";
 import imgsecond from "../img/second3.jpg";
 import imgthird from "../img/third3.jpg";
+import iconOne from "../img/icon1.jpg";
+import iconTwo from "../img/icon2.jpg";
 
 function Home() {
   return (
@@ -34,7 +36,8 @@ function Home() {
             <div class="flex flex-col text-center items-center">
               <div class="flex-shrink-0">
                 <div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-900 text-white">
-                  <svg
+                  <img src={iconOne} />
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
@@ -47,7 +50,7 @@ function Home() {
                       d="M9.808 4.057a.75.75 0 0 1 .92-.527l3.116.849a.75.75 0 0 1 .528.915l-.823 3.121a.75.75 0 0 1-1.45-.382l.337-1.281a23.484 23.484 0 0 0-3.609 3.056.75.75 0 0 1-1.07.01L6 8.06l-3.72 3.72a.75.75 0 1 1-1.06-1.061l4.25-4.25a.75.75 0 0 1 1.06 0l1.756 1.755a25.015 25.015 0 0 1 3.508-2.85l-1.46-.398a.75.75 0 0 1-.526-.92Z"
                       clip-rule="evenodd"
                     ></path>
-                  </svg>
+                  </svg> */}
                 </div>
               </div>
               <div class="mt-6">
@@ -90,7 +93,8 @@ function Home() {
             <div class="flex flex-col text-center items-center">
               <div class="flex-shrink-0">
                 <div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-900 text-white">
-                  <svg
+                  <img src={iconTwo} />
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
@@ -103,7 +107,7 @@ function Home() {
                       d="M8.5 1.709a.75.75 0 0 0-1 0 8.963 8.963 0 0 1-4.84 2.217.75.75 0 0 0-.654.72 10.499 10.499 0 0 0 5.647 9.672.75.75 0 0 0 .694-.001 10.499 10.499 0 0 0 5.647-9.672.75.75 0 0 0-.654-.719A8.963 8.963 0 0 1 8.5 1.71Zm2.34 5.504a.75.75 0 0 0-1.18-.926L7.394 9.17l-1.156-.99a.75.75 0 1 0-.976 1.138l1.75 1.5a.75.75 0 0 0 1.078-.106l2.75-3.5Z"
                       clip-rule="evenodd"
                     ></path>
-                  </svg>
+                  </svg> */}
                 </div>
               </div>
               <div className="mt-6">
@@ -142,7 +146,7 @@ function Home() {
                 </div>
                 <div className="card-body mt-4">
                   <h4 className="card-title heading-200 mb-2 font-bold text-center">
-                    Remaining Useful Life :
+                    Remaining Useful Life 
                   </h4>
                   <p class="card-sub-text body-2">
                     Predict when an asset requires change or maintenance based on anomalous senor data
@@ -167,7 +171,7 @@ function Home() {
                 </div>
                 <div class="card-body mt-4">
                   <h4 class="card-title heading-200 mb-2 font-bold text-center">
-                    Asset Failure Prediction:
+                    Asset Failure Prediction
 
                   </h4>
                   <p class="card-sub-text body-2">
@@ -193,7 +197,7 @@ function Home() {
                 </div>
                 <div class="card-body mt-4">
                   <h4 class="card-title heading-200 mb-2 font-bold text-center">
-                    Asset Maintenance Planning:
+                    Asset Maintenance Planning
 
                   </h4>
                   <p class="card-sub-text body-2">
