@@ -4,7 +4,7 @@ import image2 from '../img/Image2.jpeg';
 import image3 from '../img/Image3.jpeg'; 
 import image4 from '../img/Image4.jpeg';  
 import axios from 'axios';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Scatter} from 'recharts';
+import { BarChart,Bar,LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Scatter} from 'recharts';
 
 function DataSummary() {
   const [accuracyData, setAccuracyData] = useState([]);
@@ -17,7 +17,8 @@ function DataSummary() {
         const response = await axios.post('http://localhost:5001/getFPAccuracy', {
           
         });
-      setAccuracyData(response.data);
+      // setAccuracyData(response.data);
+      setAccuracyData([{ name: 'Accuracy', value: response?.data?.accuracy }]);
         console.log("data for acuracy",response.data);
       } catch (error) {
        
@@ -92,7 +93,7 @@ function DataSummary() {
         </div>
       </div>
       <div className='mt-32 w-4/5'>
-        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+        {/* <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2> */}
         <div className="ml-8">
             <LineChart width={800} height={400} data={plotFailure}> 
             <CartesianGrid strokeDasharray="3 3" />
@@ -108,7 +109,7 @@ function DataSummary() {
         </div>
       </div>
       <div className='mt-32 w-4/5'>
-        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+        {/* <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2> */}
         <div className="ml-8">
            <LineChart width={800} height={400} data={pcagraphData}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -120,19 +121,19 @@ function DataSummary() {
           </LineChart>
         </div>
       </div>
-      {/* <div className='mt-32 w-4/5'>
-        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+      <div className='mt-32 w-4/5'>
+        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Column Chart with count of Failures</h2>
         <div className="ml-8">
-           <LineChart width={800} height={400} data={accuracyData}>
+           <BarChart width={400} height={300} data={accuracyData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
+            <XAxis dataKey="name" />
+            <YAxis domain={[0, 1]} />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="stems" stroke="#8884d8" />
-          </LineChart>
+            <Bar dataKey="value" fill="#8884d8" />
+          </BarChart>
         </div>
-      </div> */}
+      </div>
      </div> 
   )
 }
