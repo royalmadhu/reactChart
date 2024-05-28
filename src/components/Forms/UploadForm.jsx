@@ -23,6 +23,7 @@ function UploadForm({ onDataUpload }) {
     setLoading(true);
     const reader = new FileReader();
     reader.readAsBinaryString(e.target.files[0]);
+    setFile(e.target.files[0])
     reader.onload = (e) => {
       const data = e.target.result;
       const workbook = XLSX.read(data, { type: "binary" });
@@ -34,7 +35,7 @@ function UploadForm({ onDataUpload }) {
   }
   useEffect(() => {
     if (data.length > 0) {
-      setTimeout(() => { setLoading(false); }, 2000)
+      setTimeout(() => { setLoading(false); }, 8000)
       onDataUpload(data)
     }
   }, [data]);
@@ -53,10 +54,14 @@ function UploadForm({ onDataUpload }) {
     navigate('/dataSummary');
     try {
       const formData = new FormData();
-      formData.append('machine', machine);
       formData.append('file', file);
-      formData.append('startDate', startDate);
-      formData.append('endDate', endDate);
+       const response = await fetch('http://localhost:5001/upload', {
+        method: 'POST',
+        body: formData
+      });
+      const responseData = await response.json();
+      console.log("test of api",responseData);
+      setLoading(false);
 
     } catch (error) {
       console.error('Error:', error);
