@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import image1 from '../img/image0.png'; 
 import image2 from '../img/Image2.jpeg';
 import image3 from '../img/Image3.jpeg'; 
 import image4 from '../img/Image4.jpeg';  
 import axios from 'axios';
-import { Line } from 'react-chartjs-2';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Scatter} from 'recharts';
 
 function DataSummary() {
   const [accuracyData, setAccuracyData] = useState([]);
@@ -18,7 +18,7 @@ function DataSummary() {
           
         });
       setAccuracyData(response.data);
-        console.log(response.data);
+        console.log("data for acuracy",response.data);
       } catch (error) {
        
         console.error('Error fetching data:', error);
@@ -29,8 +29,14 @@ function DataSummary() {
         const response = await axios.post('http://localhost:5001/getPcaGraph', {
           
         });
-      setPcagraphData(response.data);
-        console.log(response.data);
+      
+      const transformedData = response?.data?.green.map((value, index) => ({
+          index,
+          green: value,
+          red: response?.data?.red[index] !== undefined ? response?.data?.red[index] : null,
+        }));
+        setPcagraphData(transformedData);
+        console.log("data for pc graph",response.data);
       } catch (error) {
        
         console.error('Error fetching data:', error);
@@ -42,7 +48,7 @@ function DataSummary() {
           
         });
       setPlotFailure(response.data);
-        console.log(response.data);
+        console.log("data for plot failure acuracy",response.data);
       } catch (error) {
        
         console.error('Error fetching data:', error);
@@ -54,7 +60,7 @@ function DataSummary() {
           
         });
       setFstimelineData(response.data);
-        console.log(response.data);
+        console.log("data for fs time line",response.data);
       } catch (error) {
        
         console.error('Error fetching data:', error);
@@ -68,44 +74,65 @@ function DataSummary() {
     return () => {
       
     };
-  }, []);
-
-  const dates = fstimelineData?.map(item => new Date(item?.date));
-  const stems = fstimelineData?.map(item => item?.stems);
-  const chartData = {
-    labels: dates,
-    datasets: [
-      {
-        label: 'Stems',
-        data: stems,
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      }
-    ]
-  };
-  const chartOptions = {
-  scales: {
-    x: {
-      type: 'time', // Use 'time' for time scale
-      time: {
-        unit: 'month' // Customize as needed
-      }
-    },
-    y: {
-      // Customize y-axis options if needed
-    }
-  }
-};
+  }, []);  
   
   return (
     <div className="container mx-auto px-40">
       <div className='mt-32 w-4/5'>
         <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
         <div className="ml-8">
-           {/* <Line data={chartData} options={chartOptions} /> */}
+           <LineChart width={800} height={400} data={fstimelineData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="stems" stroke="#8884d8" />
+          </LineChart>
         </div>
       </div>
+      <div className='mt-32 w-4/5'>
+        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+        <div className="ml-8">
+            <LineChart width={800} height={400} data={plotFailure}> 
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="Temperature (C)" stroke="#8884d8" />
+            <Line type="monotone" dataKey="Pressure (psi)" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="Vibration (mm/s)" stroke="#ff6f61" />
+            <Scatter dataKey="Failure Flag" fill="red" shape="diamond" />
+            </LineChart>
+        </div>
+      </div>
+      <div className='mt-32 w-4/5'>
+        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+        <div className="ml-8">
+           <LineChart width={800} height={400} data={pcagraphData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="green" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="red" stroke="#8884d8" />
+          </LineChart>
+        </div>
+      </div>
+      {/* <div className='mt-32 w-4/5'>
+        <h2 className='ml-8 mb-4 text-2xl font-bold text-center'>Data Summary</h2>
+        <div className="ml-8">
+           <LineChart width={800} height={400} data={accuracyData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="stems" stroke="#8884d8" />
+          </LineChart>
+        </div>
+      </div> */}
      </div> 
   )
 }
