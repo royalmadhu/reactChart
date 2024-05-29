@@ -20,7 +20,6 @@ function UploadForm({ onDataUpload }) {
   };
 
   const handleFileUpload = (e) => {
-    setLoading(true);
     const reader = new FileReader();
     reader.readAsBinaryString(e.target.files[0]);
     setFile(e.target.files[0])
@@ -34,10 +33,7 @@ function UploadForm({ onDataUpload }) {
     };
   }
   useEffect(() => {
-    if (data.length > 0) {
-      setTimeout(() => { setLoading(false); }, 8000)
       onDataUpload(data)
-    }
   }, [data]);
 
 
@@ -51,7 +47,7 @@ function UploadForm({ onDataUpload }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate('/dataSummary');
+     setLoading(true);
     try {
       const formData = new FormData();
       formData.append('file', file);
@@ -61,11 +57,15 @@ function UploadForm({ onDataUpload }) {
       });
       const responseData = await response.json();
       console.log("test of api",responseData);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false); 
+        navigate('/dataSummary');
+      }, 10000);
 
     } catch (error) {
       console.error('Error:', error);
     }
+       navigate('/dataSummary');
   };
 
   return (
